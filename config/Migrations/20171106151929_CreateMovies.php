@@ -1,4 +1,4 @@
-<?php
+ <?php
 use Migrations\AbstractMigration;
 
 class CreateMovies extends AbstractMigration
@@ -35,6 +35,10 @@ class CreateMovies extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
+        $table->addColumn('release_date', 'datetime', [
+            'default' => null,
+            'null' => false,
+        ]);      
         $table->create();
     }
 }
