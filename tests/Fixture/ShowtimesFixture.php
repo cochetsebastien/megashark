@@ -10,7 +10,29 @@ use Cake\TestSuite\Fixture\TestFixture;
 class ShowtimesFixture extends TestFixture
 {
 
-    public $import = ['table' => 'showtimes'];
+    /**
+     * Fields
+     *
+     * @var array
+     */
+    // @codingStandardsIgnoreStart
+    public $fields = [
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
+        'movie_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'room_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'start' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'end' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        '_constraints' => [
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+        ],
+        '_options' => [
+            'engine' => 'InnoDB',
+            'collation' => 'latin1_swedish_ci'
+        ],
+    ];
+    // @codingStandardsIgnoreEnd
 
     /**
      * Records
@@ -22,10 +44,10 @@ class ShowtimesFixture extends TestFixture
             'id' => 1,
             'movie_id' => 1,
             'room_id' => 1,
-            'start' => '2017-11-06 15:34:21',
-            'end' => '2017-11-06 15:34:21',
-            'created' => '2017-11-06 15:34:21',
-            'modified' => '2017-11-06 15:34:21'
+            'start' => '2017-11-28 16:30:11',
+            'end' => '2017-11-28 16:30:11',
+            'created' => '2017-11-28 16:30:11',
+            'modified' => '2017-11-28 16:30:11'
         ],
     ];
 }

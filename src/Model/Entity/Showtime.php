@@ -4,18 +4,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Movie Entity
+ * Showtime Entity
  *
  * @property int $id
- * @property string $name
- * @property string $description
- * @property int $duration
+ * @property int $movie_id
+ * @property int $room_id
+ * @property \Cake\I18n\FrozenTime $start
+ * @property \Cake\I18n\FrozenTime $end
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\Showtime[] $showtimes
+ * @property \App\Model\Entity\Movie $movie
+ * @property \App\Model\Entity\Room $room
  */
-class Movie extends Entity
+class Showtime extends Entity
 {
 
     /**
@@ -28,12 +30,13 @@ class Movie extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'description' => true,
-        'duration' => true,
+        'movie_id' => true,
+        'room_id' => true,
+        'start' => true,
+        'end' => true,
         'created' => true,
         'modified' => true,
-        'showtimes' => true,
-        'release_date' => true
+        'movie' => true,
+        'room' => true
     ];
 }
