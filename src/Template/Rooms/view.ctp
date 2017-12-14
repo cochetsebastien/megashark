@@ -37,9 +37,41 @@
             <td><?= h($room->modified) ?></td>
         </tr>
     </table>
-<?php
-foreach($showtimes as $showtime) {
-    debug($showtime);
-    }
-?>
 </div>
+
+<div class="showtimes index large-9 medium-8 columns content">
+    <h3><?= __('Showtimes') ?></h3>
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th scope="col">Lundi</th>
+                <th scope="col">Mardi</th>
+                <th scope="col">Mercredi</th>
+                <th scope="col">Jeudi</th>
+                <th scope="col">Vendredi</th>
+                <th scope="col">Samedi</th>
+                <th scope="col">Dimanche</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                
+                for($i =1; $i <= 7; $i++) {
+                    if(empty($ShowtimesThisWeek[$i])) {
+                        print("<td></td>");
+                    }
+                    foreach ($ShowtimesThisWeek[$i] as $showtimes) {
+                        
+                        $name = $showtimes->movie->name;
+                        $start = $showtimes->start->format('H') . 'h/' . $showtimes->end->format('H') . 'h';
+                        print("
+                                <td>$name <br>$start</td>
+                        ");
+                    }
+                }
+            ?>
+        </tbody>
+    </table>
+</div>
+    
+                
